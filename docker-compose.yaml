@@ -1,0 +1,15 @@
+version: '3.1'
+
+services:
+
+  test:
+    build: .
+    restart: "no"
+    volumes:
+      - ${PWD}/src:/tmp
+    environment:
+      SATIS_AUTH_FILE: /tmp/secrets.json
+      SATIS_REPOSITORY: mainrepo
+      SATIS_USERNAME: satisuser
+      SATIS_PASSWORD: satispw
+
